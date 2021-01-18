@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CharlesChen&#39;s Blog</title>
+  
+  <subtitle>Long Chen</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://CharlesChen24.github.io/"/>
+  <updated>2021-01-18T09:01:22.478Z</updated>
+  <id>https://CharlesChen24.github.io/</id>
+  
+  <author>
+    <name>陈龙</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection</title>
+    <link href="https://CharlesChen24.github.io/2021/01/17/lun-wen-jie-du-iccv2019-centernet-keypoint-triplets-for-object-detection/"/>
+    <id>https://CharlesChen24.github.io/2021/01/17/lun-wen-jie-du-iccv2019-centernet-keypoint-triplets-for-object-detection/</id>
+    <published>2021-01-17T08:53:47.000Z</published>
+    <updated>2021-01-18T09:01:22.478Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;论文地址：&lt;/strong&gt;&lt;a href=&quot;https://arxiv.org/abs/1904.08189v3&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="论文解读" scheme="https://CharlesChen24.github.io/categories/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+      <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
+    
+      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
+    
+      <category term="ICCV" scheme="https://CharlesChen24.github.io/tags/ICCV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文解读】【arXiv2019】Objects as Points</title>
+    <link href="https://CharlesChen24.github.io/2021/01/15/cvpaper2/"/>
+    <id>https://CharlesChen24.github.io/2021/01/15/cvpaper2/</id>
+    <published>2021-01-15T07:19:29.000Z</published>
+    <updated>2021-01-18T07:23:46.092Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;论文地址：&lt;/strong&gt;&lt;a href=&quot;https://arxiv.org/pdf/1904.07850.pdf&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="论文解读" scheme="https://CharlesChen24.github.io/categories/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+      <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
+    
+      <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
+    
+      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文解读】【CVPR2019】Query-guided End-to-End Person Search</title>
+    <link href="https://CharlesChen24.github.io/2021/01/14/cvpaper1/"/>
+    <id>https://CharlesChen24.github.io/2021/01/14/cvpaper1/</id>
+    <published>2021-01-14T08:10:58.000Z</published>
+    <updated>2021-01-18T07:19:04.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;论文地址：&lt;/strong&gt;&lt;a href=&quot;https://arxiv.org/pdf/1905.01203.pdf&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="论文解读" scheme="https://CharlesChen24.github.io/categories/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+      <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
+    
+      <category term="CVPR" scheme="https://CharlesChen24.github.io/tags/CVPR/"/>
+    
+      <category term="Person Search" scheme="https://CharlesChen24.github.io/tags/Person-Search/"/>
+    
+  </entry>
+  
+</feed>
