@@ -432,14 +432,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
                 
@@ -489,26 +489,19 @@
 <p>$n$是一个奇数，取值为3或5，表示center region的尺寸。</p>
 <h3 id="3-2、Enriching-Center-and-Corner-Information"><a href="#3-2、Enriching-Center-and-Corner-Information" class="headerlink" title="3.2、Enriching Center and Corner Information"></a>3.2、Enriching Center and Corner Information</h3><p><strong>Center pooling</strong><br>存在的问题是object的几何中心点不一定传达最具有识别性的信息（例如：人体头部包含很多视觉信息，具有很强的识别性，但center keypoint经常落在人体躯干中心）。</p>
 <p>作者提出的方法：首先在backbone输出的特征图中判断出center keypoint的像素点，然后找到该像素点的水平和垂直方向的最大值并相加。</p>
-<p><img src="4.png" alt="Center pooling图"></p>
 <p><strong>Cascade corner pooling</strong><br>存在的问题是corners经常在objects外，这缺失了局部外观特征。CornerNet中的corner pooling是在边界上找到最大值来确定Corners，但这种方法依赖于边界，仍无法充分利用object的视觉信息。</p>
 <p>作者提出的方法：<br>1、首先沿着边界找到边界上的最大值。<br>2、然后在这个边界最大值的位置上，向object内部搜索（上边界最大值的搜索方向：垂直向下、下边界最大值的搜索方向：垂直向上、左边界最大值的搜索方向：水平向右、右边界最大值的搜索方向：水平向左），找到内部的最大值。<br>3、最后将这两个最大值相加。<br>PS：四条边界四个点的最大值都如上所述方法可得，然后得到一对corners</p>
-<p><img src="5.png" alt="Cascade corner pooling图"></p>
-<p>$\widehat{Y}$是一个keypoint heatmap，表示预测结果。$C$表示keypoint的类型数量，不同任务（人体姿态估计、目标检测等）有不同数量的类型。<br>$$\widehat{Y} \in[0,1]^{\frac WH \times \frac WH \times C} \left\{<br>\begin{array}{ccc}<br>0 &amp; &amp; background\<br>1 &amp; &amp; detected \ keypoint<br>\end{array}<br>\right.<br>$$</p>
-<p> $N$表示图像$I$中keypoint的数量。$\alpha$和$\beta$为超参数。Training objective如下：</p>
-<p>$$ L_k=-\frac{1}{N} \sum_{xyc} \left\{<br>\begin{array}{ccc}<br>(1-\widehat{Y}_{xyc})^\alpha \log (\widehat{Y}_{xyc}) &amp; &amp;if \ Y_{xyc}=1 \<br>(1-Y_{xyc})^\beta(\widehat{Y}_{xyc})^\alpha \log(1-\widehat{Y}_{xyc}) &amp; &amp;otherwise<br>\end{array}<br>\right.<br>$$</p>
-<p>局部offset $\widehat{O} \in R^{\frac WH \times \frac WH \times 2}$，用$L_1$Loss训练所得：<br>$$L_{off} = \frac 1N \sum_{p} \left\vert \widehat{O}_{\tilde{p}}-(\frac pR - \tilde{p}) \right\vert$$</p>
-<h3 id="3-2、Objects-as-Points"><a href="#3-2、Objects-as-Points" class="headerlink" title="3.2、Objects as Points"></a>3.2、Objects as Points</h3><p>尺寸预测$\widehat{S} \in R^{\frac WH \times \frac WH \times 2}$，用$L_1$Loss训练所得：<br>$$L_{size} = \frac 1N \sum_{k=1}^N \left\vert \ \widehat{S}_{p_k} -s_k\right\vert$$</p>
-<p>Training objective：<br>$$L_{det} + L_k + \lambda_{size}L_{size} + \lambda_{off}L_{off}$$</p>
-<p>从keypoint中得到bounding box：<br>$$(\widehat{x}_i+ \delta\widehat{x}_i - \widehat{w}_i/2 , \ \widehat{y}_i+ \delta\widehat{y}_i - \widehat{h}_i/2 , \ \widehat{x}_i+ \delta\widehat{x}_i + \widehat{w}_i/2 ,\  \widehat{y}_i+ \delta\widehat{y}_i + \widehat{h}_i/2)$$</p>
-<h3 id="3-3、Tasks"><a href="#3-3、Tasks" class="headerlink" title="3.3、Tasks"></a>3.3、Tasks</h3><p><strong>3D detection</strong><br>每个中心点还需要三个的属性：depth，3D dimension，orientation。</p>
-<ul>
-<li>depth：a single scalar</li>
-<li>3D dimension：three scalars.</li>
-<li>orientation：a single scalar by default.</li>
-</ul>
-<p><strong>Human pose estimation</strong><br>对图像中的每个人体实例估计$k$个 2D的人体关节位置。首选使用像素上的联合offsets直接回归可得，其次估计$k$个人体关节heatmaps，然后将最初的人体关节预测值去拟合heatmaps上最近的检测得到的keypoints上。<br><img src="3.png" alt="三种Task的具体属性要求"></p>
-<p>该论文实验部分主要用到的Backbone如下：<br><img src="4.png" alt="所用Backbone的简介图"></p>
-<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><h3 id="4-1、Comparison"><a href="#4-1、Comparison" class="headerlink" title="4.1、Comparison"></a>4.1、Comparison</h3><p>在COCO validation上，使用不同的Backbones和测试选项所得结果：</p>
+<p><img src="4.png" alt="Corner pooling、Center pooling和Cascade corner pooling图"></p>
+<p>Center pooling和Cascade corner pooling的结构借鉴了Corner pooling结构而来，结构图如下：</p>
+<p><img src="5.png" alt="Center pooling和Cascade corner pooling的结构图"></p>
+<h3 id="3-3、Tasks"><a href="#3-3、Tasks" class="headerlink" title="3.3、Tasks"></a>3.3、Tasks</h3><p>Training Loss如下：<br>$$L=L_{det}^{co}+L_{det}^{ce}+\alpha L_{pull}^{co}+\beta L_{push}^{co}+\gamma (L_{off}^{co}+L_{off}^{ce})$$</p>
+<p>$L_{det}^{co}、L_{det}^{ce}$:为focal loss，用于训练网络检测corners和center keypoints。</p>
+<p>$L_{pull}^{co}$:”pull” loss，最小化属于相同objects的词向量的距离。</p>
+<p>$L_{push}^{co}$:”push” loss，最大化属于不同objects的词向量的距离。</p>
+<p>$L_{off}^{co}+L_{off}^{ce}$:用于训练网络预测corners和center keypoints的offsets。</p>
+<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><p><strong>Baseline：</strong>CornerNet</p>
+<p><strong>Backbone：</strong>the stacked hourglass network with 52 and 104 layers</p>
+<h3 id="4-1、Comparison"><a href="#4-1、Comparison" class="headerlink" title="4.1、Comparison"></a>4.1、Comparison</h3><p>在COCO validation上，使用不同的Backbones和测试选项所得结果：</p>
 <p><img src="5.png" alt="COCO validation上结果比较图"></p>
 <p>与其他Real-time detectors对比结果：</p>
 <p><img src="6.png" alt="与其他Real-time detectors对比图"></p>
@@ -1307,7 +1300,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.7k</span>
+            <span class="white-color">3.4k</span>
             
 
             <br>
