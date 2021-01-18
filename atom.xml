@@ -41,9 +41,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
-    
       <category term="ICCV" scheme="https://CharlesChen24.github.io/tags/ICCV/"/>
+    
+      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
     
   </entry>
   
@@ -72,9 +72,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
-    
       <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
+    
+      <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
     
   </entry>
   
