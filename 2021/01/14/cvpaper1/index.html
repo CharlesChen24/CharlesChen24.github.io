@@ -76,8 +76,6 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
-
-
 <body>
 
     <header class="navbar-fixed">
@@ -486,11 +484,11 @@
 <h3 id="3-2、Query-guided-RPN-QRPN"><a href="#3-2、Query-guided-RPN-QRPN" class="headerlink" title="3.2、Query-guided RPN $(QRPN)$"></a>3.2、Query-guided RPN $(QRPN)$</h3><p><img src="3.png" alt="QRPN"><br>QRPN：query引导的逐通道的attention机制、一个标准RPN。提取具有与query相似性分数的proposal框。<br>ROI Pool：池化query裁剪特征，对池化后特征图的所有通道和像素应用FC1层，再应用excitations到图库图像特征。<br>FC1层：压缩特征。<br>FC2层：扩展特征。<br>FC1层和FC2层的作用：强调重要的信号关联信息。</p>
 <h3 id="3-3-Query-guided-Similarity-Net-QSimNet"><a href="#3-3-Query-guided-Similarity-Net-QSimNet" class="headerlink" title="3.3  Query-guided Similarity Net $(QSimNet)$"></a>3.3  Query-guided Similarity Net $(QSimNet)$</h3><p>将query中的Re-Id特征与gallery里图像块对比。<br><img src="4.png" alt="QSimNet"><br>Re-Id特征的L2距离（逐元素的相减和平方）。<br>在推理阶段，为了query在gallery中的最终匹配图像，对该输出分数执行非极大值抑制（NMS）。</p>
 <h3 id="3-4-End-to-end-Joint-Optimization"><a href="#3-4-End-to-end-Joint-Optimization" class="headerlink" title="3.4 End-to-end Joint Optimization"></a>3.4 End-to-end Joint Optimization</h3><p>$$L=\lambda_1L_{cls}+\lambda_2L_{reg}+\lambda_3L_{rpn_o}+\lambda_4L_{rpn_r}+\lambda_{5}L_{oim}+\lambda_6L{qrpn}+\lambda_7L_{sim}$$<br>$$L_{qrpn}=-\frac{1}{N}\sum_{N}\log(p_n^u)$$</p>
-<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><h3 id="4-1、Ablation-Study"><a href="#4-1、Ablation-Study" class="headerlink" title="4.1、Ablation Study"></a>4.1、Ablation Study</h3><p><img src="5.png" alt><br><img src="6.png" alt><br><img src="7.png" alt></p>
+<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><h3 id="4-1、Ablation-Study"><a href="#4-1、Ablation-Study" class="headerlink" title="4.1、Ablation Study"></a>4.1、Ablation Study</h3><p><img src="5.png" alt=""><br><img src="6.png" alt=""><br><img src="7.png" alt=""></p>
 <h2 id="5、Main-contribution"><a href="#5、Main-contribution" class="headerlink" title="5、Main contribution"></a>5、Main contribution</h2><p>1、引入了第一个query引导的端到端的网络$(QEEPS)$。<br>2、提出了一个query引导的Siamese squeeze-and-excitation$(QSSE)$模块（对query和图像库图像对之间的相似性建模）。<br>3、定义一个新的query引导的$(QRPN)$，将SE-Net扩展到query通道和空间通道。<br>4、定义了一个新的QSimNet，学习query引导的Re-Id分数。</p>
-<p><img src="0.png" alt></p>
+<p><img src="0.png" alt=""></p>
 <blockquote>
-<p><strong><em>“这一生志愿只要平凡快乐、谁说这样不伟大呢。”                         <p align="right">——五月天《笑忘歌》</p></em></strong> </p>
+<p><strong><em>“这一生志愿只要平凡快乐、谁说这样不伟大呢。”                         </em></strong></p><p align="right"><strong><em>——五月天《笑忘歌》</em></strong></p> <p></p>
 </blockquote>
 
             </div>
@@ -1406,9 +1404,6 @@ $(function () {
 </div>
 
 
-
-
-
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1457,9 +1452,6 @@ $(function () {
             zIndex="-1" count="200" 
             src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
         </script>
-    
-
-    <!--彩带1.点击自动替换彩带-->
     
 
     <!--彩带2.自动飘动-->

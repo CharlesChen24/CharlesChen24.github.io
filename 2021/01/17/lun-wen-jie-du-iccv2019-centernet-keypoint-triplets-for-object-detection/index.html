@@ -75,8 +75,6 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
-
-
 <body>
 
     <header class="navbar-fixed">
@@ -437,7 +435,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.5k
                 </div>
                 
 
@@ -479,7 +477,7 @@
 <p><strong>Drawback:</strong><br>1、Anchor-based method：在训练时需要大量的anchors，并且每个anchor的尺寸和长宽比都需要人工设计。这些anchors通常不能对齐ground-truth boxes，这不利于边界框内容的分类任务。<br>2、ConerNet（baseline）：不能充分利用Object的全局信息。</p>
 <h2 id="2、Motivation"><a href="#2、Motivation" class="headerlink" title="2、Motivation"></a>2、Motivation</h2><p>作者相信：如果预测所得的bounding box与ground-truth box有一个很高的IoU值，那么就可以认为用于预测同一类别的center keypoint在中心区域的概率是很高的，反之亦然。</p>
 <p>推理阶段：在得到一对corner keypoint后，通过检查是否有一种与其同一类别的center keypoint落在该proposal的中心区域，来判断proposal内是否真的有一个object。</p>
-<p><img src="1.png" alt></p>
+<p><img src="1.png" alt=""></p>
 <p><strong>结论：</strong>CornerNet无法利用bounding box内部区域的信息。</p>
 <p>由此可得<strong>作者主要的motivation</strong>如下：</p>
 <ul>
@@ -529,9 +527,9 @@
 <p><img src="12.png" alt="关于corner/cascade corner pooling定性分析图"></p>
 <h3 id="4-2、Error-Analysis"><a href="#4-2、Error-Analysis" class="headerlink" title="4.2、Error Analysis"></a>4.2、Error Analysis</h3><p><img src="13.png" alt="Error Analysis图"></p>
 <h2 id="5、Main-contribution"><a href="#5、Main-contribution" class="headerlink" title="5、Main contribution"></a>5、Main contribution</h2><p>1、该论文提出了一种CenterNet模型，将目标检测任务转换成检测一个center keypoint和两个corners，三个点的任务。<br>2、该论文设计了center pooling和cascade corner pooling两个模块，来解决CornerNet无法利用bounding box内部信息的问题。</p>
-<p><img src="0.png" alt></p>
+<p><img src="0.png" alt=""></p>
 <blockquote>
-<p><strong><em>“你说被火烧过、才能出现凤凰</em></strong><br>&#8194;<strong><em>逆风的方向、更适合飞翔</em></strong><br>&#8194;<strong><em>我不怕千万人阻挡、只怕自己投降。”   <p align="right">——五月天《倔强》</p></em></strong></p>
+<p><strong><em>“你说被火烧过、才能出现凤凰</em></strong><br> <strong><em>逆风的方向、更适合飞翔</em></strong><br> <strong><em>我不怕千万人阻挡、只怕自己投降。”   </em></strong></p><p align="right"><strong><em>——五月天《倔强》</em></strong></p><p></p>
 </blockquote>
 
             </div>
@@ -1448,9 +1446,6 @@ $(function () {
 </div>
 
 
-
-
-
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1499,9 +1494,6 @@ $(function () {
             zIndex="-1" count="200" 
             src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
         </script>
-    
-
-    <!--彩带1.点击自动替换彩带-->
     
 
     <!--彩带2.自动飘动-->
