@@ -274,7 +274,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #bf30ac 0%, #35dae6 100%);
     opacity: 0.7;
 }
 
@@ -287,12 +287,13 @@ mark {
 }
 
 .progress-bar {
-    height: 4px;
+    height: 10px;
     position: fixed;
-    bottom: 0;
+    top: 64px;
+/*    bottom: 0;*/
     z-index: 300;
-    background: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
-    opacity: 0.7;
+    background: linear-gradient(to right, #bf30ac 0%, #35dae6 100%);
+    opacity: 0.8;
 }
 
 .sidenav-overlay {
@@ -1916,3 +1917,11 @@ footer .copy-right {
     /* bg color = bg color under block */
     background: white;
 }
+
+/**{ 
+    cursor: url("/medias/cursor1.ico"),auto!important; 
+} 
+    :active{ 
+    cursor: url("/medias/cursor2.ico"),auto!important; 
+}
+*/
