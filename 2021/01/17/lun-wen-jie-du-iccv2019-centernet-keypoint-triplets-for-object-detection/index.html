@@ -269,7 +269,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/papercover/2.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/papercover/3.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -390,12 +390,12 @@
                             <span class="chip bg-color">CV</span>
                         </a>
                         
-                        <a href="/tags/ICCV/" target="_blank">
-                            <span class="chip bg-color">ICCV</span>
-                        </a>
-                        
                         <a href="/tags/Object-Detection/" target="_blank">
                             <span class="chip bg-color">Object Detection</span>
+                        </a>
+                        
+                        <a href="/tags/ICCV/" target="_blank">
+                            <span class="chip bg-color">ICCV</span>
                         </a>
                         
                     </div>
@@ -432,7 +432,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -459,7 +459,7 @@
 <p><strong>论文地址：</strong><a href="https://arxiv.org/abs/1904.08189v3" target="_blank" rel="noopener">https://arxiv.org/abs/1904.08189v3</a><br><strong>代码地址：</strong><a href="https://github.com/Duankaiwen/CenterNet" target="_blank" rel="noopener">https://github.com/Duankaiwen/CenterNet.</a></p>
 </blockquote>
 <h2 id="1、Background"><a href="#1、Background" class="headerlink" title="1、Background"></a>1、Background</h2><h3 id="1-1、Task"><a href="#1-1、Task" class="headerlink" title="1.1、Task"></a>1.1、Task</h3><p><strong>Object Detection：</strong>找出图像中所有感兴趣的目标，确定它们的位置和类别。</p>
-<p><strong>idea：</strong>该论文基于One-stage的Detector——CornerNet，提出了一个新的One-stage网络框架，将检测每个Object的任务转化成检测一组triplet。此外，作者设计了两个模块：Cascade corner pooling和Center pooling。</p>
+<p><strong>Idea：</strong>该论文基于One-stage的Detector——CornerNet，提出了一个新的One-stage网络框架，将检测每个Object的任务转化成检测一组triplet。此外，作者设计了两个模块：Cascade corner pooling和Center pooling。</p>
 <ul>
 <li>Cascade corner pooling：得到center keypoint在水平和垂直方向上的响应分值总和的最大值。</li>
 <li>Center pooling：得到object在边界和内部个两方面的响应分值总和的最大值。</li>
@@ -501,30 +501,32 @@
 <p>$L_{off}^{co}+L_{off}^{ce}$:用于训练网络预测corners和center keypoints的offsets。</p>
 <h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><p><strong>Baseline：</strong>CornerNet</p>
 <p><strong>Backbone：</strong>the stacked hourglass network with 52 and 104 layers</p>
-<h3 id="4-1、Comparison"><a href="#4-1、Comparison" class="headerlink" title="4.1、Comparison"></a>4.1、Comparison</h3><p>在COCO validation上，使用不同的Backbones和测试选项所得结果：</p>
-<p><img src="5.png" alt="COCO validation上结果比较图"></p>
-<p>与其他Real-time detectors对比结果：</p>
-<p><img src="6.png" alt="与其他Real-time detectors对比图"></p>
-<p>在COCO test-dev上与其他State-of-the-art方法的对比结果：</p>
-<p><img src="7.png" alt="与其他State-of-the-art方法的对比图"></p>
-<p>在Pascal VOC 2007 test上的对比结果：</p>
-<p><img src="8.png" alt="在Pascal VOC 2007 test上的对比图"></p>
-<h3 id="4-2、Ablation-Study"><a href="#4-2、Ablation-Study" class="headerlink" title="4.2、Ablation Study"></a>4.2、Ablation Study</h3><p>在Center point collision和IoU based NMS方面：</p>
-<p><img src="9.png" alt="Ablation Study1图"></p>
-<p>在分辨率回归Loss方面：</p>
-<p><img src="10.png" alt="Ablation Study2图"></p>
-<p>在Bounding box和训练策略方面</p>
-<p><img src="11.png" alt="Ablation Study3图"></p>
-<h3 id="4-3、Task"><a href="#4-3、Task" class="headerlink" title="4.3、Task"></a>4.3、Task</h3><p>在KITTI evaluation上的3D detection，结果如下：</p>
-<p><img src="12.png" alt="3D detection实验结果图"></p>
-<p>在MS COCO dataset上的Pose estimation，结果如下：</p>
-<p><img src="13.png" alt="Pose estimation实验结果图"></p>
-<p>定性分析，结果如下：</p>
-<p><img src="14.png" alt="定性分析图"></p>
-<p>##5、Main contribution<br>1、该论文将Object Detection任务看做边界框中心点估计任务。<br>2、该论文提出了不带有例如NMS的post-processing的CenterNet方法。<br>3、该网络可以广泛地应用在其他任务上。<br>4、该方法性能优于基于边界框的检测器</p>
-<p><img src="1.png" alt></p>
+<h3 id="4-1、Comparison"><a href="#4-1、Comparison" class="headerlink" title="4.1、Comparison"></a>4.1、Comparison</h3><p>在MS-COCO test-dev数据集上，与State-of-the-art Detectors的对比结果:</p>
+<p><img src="6.png" alt="State-of-the-art Detectors的对比结果图"></p>
+<p>在MS-COCO validation数据集上，检测结果定性分析：</p>
+<p><img src="7.png" alt="检测结果定性分析图"></p>
+<p>CornerNet和CenterNet误检率对比的结果如下：</p>
+<p><img src="8.png" alt="误检率对比结果图"></p>
+<p>上图显示了CenterNet避免了大量错误bounding box的检测，尤其是小尺寸的错误bounding box。</p>
+<p>推理速度的对比：</p>
+<ul>
+<li><strong>average inference time of CornerNet511-104：</strong>300ms per image</li>
+<li><strong>average inference time of CenterNet511-104：</strong>340ms per image</li>
+<li><strong>average inference time of CenterNet511-52：</strong>270ms per image</li>
+</ul>
+<h3 id="4-2、Ablation-Study"><a href="#4-2、Ablation-Study" class="headerlink" title="4.2、Ablation Study"></a>4.2、Ablation Study</h3><p>Baseline:CornerNet511-52。CRE表示center region exploration。CTP表示center pooling。CCP表示cascade corner pooling。</p>
+<p><img src="9.png" alt="消融研究图"></p>
+<p>有无利用center信息的定性分析:</p>
+<p><img src="10.png" alt="关于center信息定性分析图"></p>
+<p>有无center pooling的定性分析:</p>
+<p><img src="11.png" alt="有无center pooling的定性分析图"></p>
+<p>在corner pooling和cascade corner pooling上的定性分析：</p>
+<p><img src="12.png" alt="关于corner/cascade corner pooling定性分析图"></p>
+<h3 id="4-2、Error-Analysis"><a href="#4-2、Error-Analysis" class="headerlink" title="4.2、Error Analysis"></a>4.2、Error Analysis</h3><p><img src="13.png" alt="Error Analysis图"></p>
+<h2 id="5、Main-contribution"><a href="#5、Main-contribution" class="headerlink" title="5、Main contribution"></a>5、Main contribution</h2><p>1、该论文提出了一种CenterNet模型，将目标检测任务转换成检测一个center keypoint和两个corners，三个点的任务。<br>2、该论文设计了center pooling和cascade corner pooling两个模块，来解决CornerNet无法利用bounding box内部信息的问题。<br><strong><em>    &amp;\ &amp;asda as</em></strong></p>
+<p><img src="0.png" alt></p>
 <blockquote>
-<p><strong><em>“这一生志愿只要平凡快乐，谁说这样不伟大呢。”                         <p align="right">——五月天《笑忘歌》</p></em></strong></p>
+<p><strong><em>“你说被火烧过、才能出现凤凰</em></strong><br>&#8194;<strong><em>逆风的方向、更适合飞翔</em></strong><br>&#8194;<strong><em>我不怕千万人阻挡、只怕自己投降。”   <p align="right">——五月天《倔强》</p></em></strong></p>
 </blockquote>
 
             </div>
@@ -1018,7 +1020,7 @@
                 <a href="/2021/01/17/lun-wen-jie-du-iccv2019-centernet-keypoint-triplets-for-object-detection/">
                     <div class="card-image">
                         
-                        <img src="/medias/papercover/2.png" class="responsive-img" alt="【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection">
+                        <img src="/medias/papercover/3.png" class="responsive-img" alt="【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection">
                         
                         <span class="card-title">【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection</span>
                     </div>
@@ -1053,12 +1055,12 @@
                         <span class="chip bg-color">CV</span>
                     </a>
                     
-                    <a href="/tags/ICCV/" target="_blank">
-                        <span class="chip bg-color">ICCV</span>
-                    </a>
-                    
                     <a href="/tags/Object-Detection/" target="_blank">
                         <span class="chip bg-color">Object Detection</span>
+                    </a>
+                    
+                    <a href="/tags/ICCV/" target="_blank">
+                        <span class="chip bg-color">ICCV</span>
                     </a>
                     
                 </div>
@@ -1109,12 +1111,12 @@
                         <span class="chip bg-color">CV</span>
                     </a>
                     
-                    <a href="/tags/Object-Detection/" target="_blank">
-                        <span class="chip bg-color">Object Detection</span>
-                    </a>
-                    
                     <a href="/tags/arXiv/" target="_blank">
                         <span class="chip bg-color">arXiv</span>
+                    </a>
+                    
+                    <a href="/tags/Object-Detection/" target="_blank">
+                        <span class="chip bg-color">Object Detection</span>
                     </a>
                     
                 </div>
@@ -1300,7 +1302,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.4k</span>
+            <span class="white-color">3.5k</span>
             
 
             <br>

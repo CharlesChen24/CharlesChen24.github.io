@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://CharlesChen24.github.io/"/>
-  <updated>2021-01-18T11:01:22.892Z</updated>
+  <updated>2021-01-19T05:05:50.433Z</updated>
   <id>https://CharlesChen24.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://CharlesChen24.github.io/2021/01/17/lun-wen-jie-du-iccv2019-centernet-keypoint-triplets-for-object-detection/"/>
     <id>https://CharlesChen24.github.io/2021/01/17/lun-wen-jie-du-iccv2019-centernet-keypoint-triplets-for-object-detection/</id>
     <published>2021-01-17T08:53:47.000Z</published>
-    <updated>2021-01-18T11:01:22.892Z</updated>
+    <updated>2021-01-19T05:05:50.433Z</updated>
     
     <summary type="html">
     
@@ -41,9 +41,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="ICCV" scheme="https://CharlesChen24.github.io/tags/ICCV/"/>
-    
       <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
+    
+      <category term="ICCV" scheme="https://CharlesChen24.github.io/tags/ICCV/"/>
     
   </entry>
   
@@ -72,9 +72,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
-    
       <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
+    
+      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
     
   </entry>
   
@@ -83,7 +83,7 @@
     <link href="https://CharlesChen24.github.io/2021/01/14/cvpaper1/"/>
     <id>https://CharlesChen24.github.io/2021/01/14/cvpaper1/</id>
     <published>2021-01-14T08:10:58.000Z</published>
-    <updated>2021-01-18T07:19:04.765Z</updated>
+    <updated>2021-01-18T12:54:41.822Z</updated>
     
     <summary type="html">
     
