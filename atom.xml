@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://CharlesChen24.github.io/"/>
-  <updated>2021-01-20T03:00:13.198Z</updated>
+  <updated>2021-01-20T02:58:10.822Z</updated>
   <id>https://CharlesChen24.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>cvpaper4</title>
-    <link href="https://CharlesChen24.github.io/2021/01/20/cvpaper4/"/>
-    <id>https://CharlesChen24.github.io/2021/01/20/cvpaper4/</id>
-    <published>2021-01-20T03:00:13.000Z</published>
-    <updated>2021-01-20T03:00:13.198Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection</title>
