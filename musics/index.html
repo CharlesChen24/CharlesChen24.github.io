@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: arXiv, ECNU CV Computer Vision CharlesChen">
+    <meta name="keywords" content="musics, ECNU CV Computer Vision CharlesChen">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="标签: arXiv | CharlesChen&#39;s Blog">
+    <meta name="description" content="musics | CharlesChen&#39;s Blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: arXiv | CharlesChen&#39;s Blog</title>
+    <title>musics | CharlesChen&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -446,7 +446,7 @@
                     Long Chen
                  -->
                 
-                    标签
+                    音乐
                 
             </div>
 
@@ -467,118 +467,47 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </div>
 
 <main class="content">
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
 
+                    
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
     
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/CV/" title="CV: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CV" style="background-color: #F9EBEA;">CV
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/arXiv/" title="arXiv: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="arXiv" style="background-color: #F5EEF8;">arXiv
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Object-Detection/" title="Object Detection: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Object Detection" style="background-color: #D5F5E3;">Object Detection
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/CVPR/" title="CVPR: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CVPR" style="background-color: #E8F8F5;">CVPR
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Person-Search/" title="Person Search: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Person Search" style="background-color: #FEF9E7;">Person Search
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ICCV/" title="ICCV: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="ICCV" style="background-color: #F8F9F9;">ICCV
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
         </div>
     </div>
 </div>
 
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#542674',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"雨","artist":"沈以诚","url":"/medias/music/雨-沈以诚.mp3","cover":"/medias/music/雨.jpg"}]')
+    });
+});
+</script>
 
-    
-
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="CV, arXiv, Object Detection" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2021/01/15/cvpaper2/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="/medias/papercover/2.png" class="responsive-img" alt="【论文解读】【arXiv2019】Objects as Points">
-                            
-                            <span class="card-title">【论文解读】【arXiv2019】Objects as Points</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/论文解读/" class="post-category" target="_blank">
-                                论文解读
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
                 </div>
             </div>
-            
         </div>
-    </article>
+    </div>
 </main>
-
-
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">

@@ -108,32 +108,6 @@
       <li class="hide-on-med-and-down nav-item" >
 
         
-            <a href="/tags" class="waves-effect waves-light">
-              
-                <i class="fa fa-tags"></i>
-              
-              <span>标签</span>
-            </a>
-
-            
-      </li>
-    
-      <li class="hide-on-med-and-down nav-item" >
-
-        
-            <a href="/categories" class="waves-effect waves-light">
-              
-                <i class="fa fa-bookmark"></i>
-              
-              <span>分类</span>
-            </a>
-
-            
-      </li>
-    
-      <li class="hide-on-med-and-down nav-item" >
-
-        
               <a href="/archives" class="waves-effect waves-light">
                 
                   <i class="fa fa-archive"></i>
@@ -145,7 +119,16 @@
             <ul class="sub-nav menus_item_child ">
               
                 <li> 
-                  <a href="/categories/技术" >
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/technology" >
                     
                       <i class="fa fa-code" style="margin-top: -20px;"></i>
                     
@@ -154,7 +137,7 @@
                 </li>
               
                 <li> 
-                  <a href="/categories/生活" >
+                  <a href="/life" >
                     
                       <i class="fa fa-file-text-o" style="margin-top: -20px;"></i>
                     
@@ -163,7 +146,7 @@
                 </li>
               
                 <li> 
-                  <a href="/categories/随笔" >
+                  <a href="/essay" >
                     
                       <i class="fa fa-commenting-o" style="margin-top: -20px;"></i>
                     
@@ -189,7 +172,7 @@
             <ul class="sub-nav menus_item_child ">
               
                 <li> 
-                  <a href="/music" >
+                  <a href="/musics" >
                     
                       <i class="fa fas fa-music" style="margin-top: -20px;"></i>
                     
@@ -307,28 +290,6 @@
         
         <li class="m-nav-item">
                 
-                    <a href="/tags" class="waves-effect waves-light">
-                        
-                        <i class="fa fa-fw fa-tags"></i>
-                        
-                        标签
-                    </a>
-              
-            </li>
-        
-        <li class="m-nav-item">
-                
-                    <a href="/categories" class="waves-effect waves-light">
-                        
-                        <i class="fa fa-fw fa-bookmark"></i>
-                        
-                        分类
-                    </a>
-              
-            </li>
-        
-        <li class="m-nav-item">
-                
                     <a href="javascript:;">
                             
                             <i class="fa fa-fw fa-archive"></i>
@@ -339,7 +300,16 @@
                 <ul>
                   
                     <li> 
-                      <a href="/categories/技术" >
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 25px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/technology" >
                            
                             <i class="fa fa-code" style="left: 25px; position: absolute;"></i>
                        
@@ -348,7 +318,7 @@
                     </li>
                   
                     <li> 
-                      <a href="/categories/生活" >
+                      <a href="/life" >
                            
                             <i class="fa fa-file-text-o" style="left: 25px; position: absolute;"></i>
                        
@@ -357,7 +327,7 @@
                     </li>
                   
                     <li> 
-                      <a href="/categories/随笔" >
+                      <a href="/essay" >
                            
                             <i class="fa fa-commenting-o" style="left: 25px; position: absolute;"></i>
                        
@@ -381,7 +351,7 @@
                 <ul>
                   
                     <li> 
-                      <a href="/music" >
+                      <a href="/musics" >
                            
                             <i class="fa fas fa-music" style="left: 25px; position: absolute;"></i>
                        
@@ -518,28 +488,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/CVPR/" title="CVPR: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CVPR" style="background-color: #F5EEF8;">CVPR
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Person-Search/" title="Person Search: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Person Search" style="background-color: #D5F5E3;">Person Search
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/arXiv/" title="arXiv: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="arXiv" style="background-color: #E8F8F5;">arXiv
+                            data-tagname="arXiv" style="background-color: #F5EEF8;">arXiv
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -548,8 +500,26 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/Object-Detection/" title="Object Detection: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="Object Detection" style="background-color: #FEF9E7;">Object Detection
+                            data-tagname="Object Detection" style="background-color: #D5F5E3;">Object Detection
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CVPR/" title="CVPR: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CVPR" style="background-color: #E8F8F5;">CVPR
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Person-Search/" title="Person Search: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Person Search" style="background-color: #FEF9E7;">Person Search
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -566,6 +536,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         </div>
     </div>
 </div>
+
 
     
 
@@ -673,7 +644,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 
 
-    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email1160593941@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1160593941@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fa fa-envelope-open"></i>
     </a>
 

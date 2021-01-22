@@ -1,19 +1,19 @@
-/*全局基础样式*/
-/*小屏幕下(手机类)的样式*/
+/*å…¨å±€åŸºç¡€æ ·å¼*/
+/*å°å±å¹•ä¸‹(æ‰‹æœºç±»)çš„æ ·å¼*/
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*ä¸­ç­‰å±å¹•ä¸‹(å¹³æ¿ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
     }
 }
 
-/*大屏幕下(桌面类)的样式*/
+/*å¤§å±å¹•ä¸‹(æ¡Œé¢ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 993px) {
     .container {
         width: 85%;
@@ -454,7 +454,7 @@ header .go-back i {
     line-height: 56px;
 }
 
-/* 背景图效果. */
+/* èƒŒæ™¯å›¾æ•ˆæžœ. */
 .bg-cover {
     position: relative;
     display: flex;
@@ -665,7 +665,7 @@ header .go-back i {
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*ä¸­ç­‰å±å¹•ä¸‹(å¹³æ¿ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .index-card .card .card-content {
         padding: 20px 20px;
@@ -781,7 +781,7 @@ header .go-back i {
     margin-top: -10px;
 }
 
-/*文章列表卡片各样式*/
+/*æ–‡ç« åˆ—è¡¨å¡ç‰‡å„æ ·å¼*/
 #articles {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -919,12 +919,12 @@ article .article-tags .chip {
     color: #999 !important;
 }
 
-/*文章详情样式*/
+/*æ–‡ç« è¯¦æƒ…æ ·å¼*/
 #artDetail {
     margin-top: -60px;
 }
 
-/* 修改小屏幕下文章详情table样式. */
+/* ä¿®æ”¹å°å±å¹•ä¸‹æ–‡ç« è¯¦æƒ…tableæ ·å¼. */
 @media only screen and (max-width: 550px) {
     #articleContent table{
         table-layout: fixed;
@@ -1725,7 +1725,7 @@ table tr:nth-child(2n), thead {
     cursor: pointer;
 }
 
-/*尾部样式*/
+/*å°¾éƒ¨æ ·å¼*/
 footer {
     padding-bottom: 1px;
 }
@@ -1743,7 +1743,7 @@ footer .copy-right {
     color: #dbdbdb;
 }
 
-/*搜索层样式*/
+/*æœç´¢å±‚æ ·å¼*/
 #searchIcon {
     font-size: 1.2rem;
 }
@@ -1788,7 +1788,7 @@ footer .copy-right {
     white-space: pre-wrap;
 }
 
-/*回到顶部按钮样式*/
+/*å›žåˆ°é¡¶éƒ¨æŒ‰é’®æ ·å¼*/
 .top-scroll {
     display: none;
     position: fixed;
@@ -1918,7 +1918,7 @@ footer .copy-right {
     background: white;
 }
 
-/* 二级菜单样式定义 洪卫 shw2018 add 2019.09.17 */
+/* äºŒçº§èœå•æ ·å¼å®šä¹‰ */
 
 .nav-menu {}
 
