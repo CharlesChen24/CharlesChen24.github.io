@@ -4,15 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="【论文解读】【CVPR2019】Query-guided End-to-End Person Search, ECNU CV Computer Vision CharlesChen">
+    <meta name="keywords" content="【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search, ECNU CV Computer Vision CharlesChen">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="
-论文地址：https://arxiv.org/pdf/1905.01203.pdf
+论文地址：https://arxiv.org/abs/1604.01850代码地址：https://github.com/ShuangLI59/person_search
 
-1、Background1.1、TaskPerson Search:在一个完全无约束的场景图像库中定位与query person匹配的目标。
-1.2、P">
+1、Background1.1、TaskObject Detec">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>【论文解读】【CVPR2019】Query-guided End-to-End Person Search | CharlesChen&#39;s Blog</title>
+    <title>【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search | CharlesChen&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -457,13 +456,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/papercover/1.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/papercover/')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        【论文解读】【CVPR2019】Query-guided End-to-End Person Search
+                        【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search
                     </div>
                 </div>
             </div>
@@ -606,7 +605,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-14
+                    2021-03-02
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -620,14 +619,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    856
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
                 
@@ -644,35 +643,77 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>论文地址：</strong><a href="https://arxiv.org/pdf/1905.01203.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1905.01203.pdf</a></p>
+<p><strong>论文地址：</strong><a href="https://arxiv.org/abs/1604.01850" target="_blank" rel="noopener">https://arxiv.org/abs/1604.01850</a><br><strong>代码地址：</strong><a href="https://github.com/ShuangLI59/person_search" target="_blank" rel="noopener">https://github.com/ShuangLI59/person_search</a></p>
 </blockquote>
-<h2 id="1、Background"><a href="#1、Background" class="headerlink" title="1、Background"></a>1、Background</h2><h3 id="1-1、Task"><a href="#1-1、Task" class="headerlink" title="1.1、Task"></a>1.1、Task</h3><p><strong>Person Search:</strong>在一个完全无约束的场景图像库中定位与query person匹配的目标。</p>
-<h3 id="1-2、Problem"><a href="#1-2、Problem" class="headerlink" title="1.2、Problem"></a>1.2、Problem</h3><p>首先，作者坚信两点：</p>
-<ol>
-<li>detection和Re-id需要被实现在同一个优化框架下。</li>
-<li>行人搜索需要充分地利用query image（尤其是query部分）的信息。</li>
-</ol>
-<p>其次，People Search经典的方法是将该问题分为Detection和Re-id两部分考虑，并通过分开的监督网络逐个解决。而作者提出的QEEPS是第一个端到端的query引导的Detection和Re-id网络。</p>
-<p>最后，该论文Related Work部分主要从Person Detection、Person Re-Identification、End-to-End Person Search、Query-guided person search四部分进行介绍，提到了这四个方面里一些比较经典的工作，例如Faster R-CNN、手工特征设计、度量学习、OIM等。</p>
-<h2 id="2、Motivation"><a href="#2、Motivation" class="headerlink" title="2、Motivation"></a>2、Motivation</h2><ul>
-<li>在一张图像里搜索一个人，需要看重行人衣服的颜色、纹理等特别的部分。</li>
-<li>Detection和Re-id两部分需要在一个共同优化框架内。</li>
+<h2 id="1、Background"><a href="#1、Background" class="headerlink" title="1、Background"></a>1、Background</h2><h3 id="1-1、Task"><a href="#1-1、Task" class="headerlink" title="1.1、Task"></a>1.1、Task</h3><p><strong>Object Detection：</strong>找出图像中所有感兴趣的目标，确定它们的位置和类别。</p>
+<p><strong>Idea：</strong>该论文基于One-stage的Detector——CornerNet，提出了一个新的One-stage网络框架，将检测每个Object的任务转化成检测一组triplet。此外，作者设计了两个模块：Cascade corner pooling和Center pooling。</p>
+<ul>
+<li>Cascade corner pooling：得到center keypoint在水平和垂直方向上的响应分值总和的最大值。</li>
+<li>Center pooling：得到object在边界和内部个两方面的响应分值总和的最大值。</li>
 </ul>
-<h2 id="3、Method"><a href="#3、Method" class="headerlink" title="3、Method"></a>3、Method</h2><p><img src="1.png" alt="模型结构图"><br>三个子网络：</p>
-<ol>
-<li>QSSE-Net:a Query-guided Siamese Squeeze-and-Excitation Network<br>利用query和图像集图像中的全局上下文信息来给特征通道分配权重。</li>
-<li>QRPN:a Query-guided Region Proposal Network（局部）<br>利用query-ROI-Pooled特征来强调图像集图像中的判别模式来产生相关的proposals。</li>
-<li>QSimNet:a Query-guided Similarity Network （局部）<br>计算query和图像集图像里裁剪特征的Re-id得分。</li>
-</ol>
-<h3 id="3-1、Query-guided-Siamese-Squeeze-and-Excitation-Network-QSSE-Net"><a href="#3-1、Query-guided-Siamese-Squeeze-and-Excitation-Network-QSSE-Net" class="headerlink" title="3.1、Query-guided Siamese Squeeze-and-Excitation Network $(QSSE-Net)$"></a>3.1、Query-guided Siamese Squeeze-and-Excitation Network $(QSSE-Net)$</h3><p>利用query和图像集图像中的全局上下文信息，计算出一个权重向量，并为特征图每个通道分配权重。<br>Squeeze操作：通过全局平均池压缩query和图像集的每个C通道的空间信息。<br>Excitation操作：应用两个全连接层的和S函数，为特征图每个通道分配权重。<br><img src="2.png" alt="QSSE-Net"><br>它应用squeeze-and-Excitation操作，考虑到网络内通道的依赖性和网络间通道的相似性，重新校准query和图库图像通道权重。</p>
-<h3 id="3-2、Query-guided-RPN-QRPN"><a href="#3-2、Query-guided-RPN-QRPN" class="headerlink" title="3.2、Query-guided RPN $(QRPN)$"></a>3.2、Query-guided RPN $(QRPN)$</h3><p><img src="3.png" alt="QRPN"><br>QRPN：query引导的逐通道的attention机制、一个标准RPN。提取具有与query相似性分数的proposal框。<br>ROI Pool：池化query裁剪特征，对池化后特征图的所有通道和像素应用FC1层，再应用excitations到图库图像特征。<br>FC1层：压缩特征。<br>FC2层：扩展特征。<br>FC1层和FC2层的作用：强调重要的信号关联信息。</p>
-<h3 id="3-3-Query-guided-Similarity-Net-QSimNet"><a href="#3-3-Query-guided-Similarity-Net-QSimNet" class="headerlink" title="3.3  Query-guided Similarity Net $(QSimNet)$"></a>3.3  Query-guided Similarity Net $(QSimNet)$</h3><p>将query中的Re-Id特征与gallery里图像块对比。<br><img src="4.png" alt="QSimNet"><br>Re-Id特征的L2距离（逐元素的相减和平方）。<br>在推理阶段，为了query在gallery中的最终匹配图像，对该输出分数执行非极大值抑制（NMS）。</p>
-<h3 id="3-4-End-to-end-Joint-Optimization"><a href="#3-4-End-to-end-Joint-Optimization" class="headerlink" title="3.4 End-to-end Joint Optimization"></a>3.4 End-to-end Joint Optimization</h3><p>$$L=\lambda_1L_{cls}+\lambda_2L_{reg}+\lambda_3L_{rpn_o}+\lambda_4L_{rpn_r}+\lambda_{5}L_{oim}+\lambda_6L{qrpn}+\lambda_7L_{sim}$$<br>$$L_{qrpn}=-\frac{1}{N}\sum_{N}\log(p_n^u)$$</p>
-<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><h3 id="4-1、Ablation-Study"><a href="#4-1、Ablation-Study" class="headerlink" title="4.1、Ablation Study"></a>4.1、Ablation Study</h3><p><img src="5.png" alt=""><br><img src="6.png" alt=""><br><img src="7.png" alt=""></p>
-<h2 id="5、Main-contribution"><a href="#5、Main-contribution" class="headerlink" title="5、Main contribution"></a>5、Main contribution</h2><p>1、引入了第一个query引导的端到端的网络$(QEEPS)$。<br>2、提出了一个query引导的Siamese squeeze-and-excitation$(QSSE)$模块（对query和图像库图像对之间的相似性建模）。<br>3、定义一个新的query引导的$(QRPN)$，将SE-Net扩展到query通道和空间通道。<br>4、定义了一个新的QSimNet，学习query引导的Re-Id分数。</p>
+<h3 id="1-2、Problem"><a href="#1-2、Problem" class="headerlink" title="1.2、Problem"></a>1.2、Problem</h3><p><strong>Related Work</strong><br>该论文从Two-stage approaches和One-stage approaches两个方向简介了一些经典的工作。</p>
+<ul>
+<li><p>Two-stage approaches：将Object detection任务分成两个阶段：1、提取RoIs（Regins of Interest），2、分类和回归RoIs。经典工作有：R-CNN、SPP-Net、Faster-RCNN（RPN）、Mask-RCNN、R-FCN、Cascade R-CNN。</p>
+</li>
+<li><p>One-stage approches:直接分类和回归候选anchor box，无RoI的提取模块。经典工作有：YOLO系列、SSD、DSSD、R-SSD、RON、RefineDet、 CornerNet。</p>
+</li>
+</ul>
+<p><strong>Drawback:</strong><br>1、Anchor-based method：在训练时需要大量的anchors，并且每个anchor的尺寸和长宽比都需要人工设计。这些anchors通常不能对齐ground-truth boxes，这不利于边界框内容的分类任务。<br>2、ConerNet（baseline）：不能充分利用Object的全局信息。</p>
+<h2 id="2、Motivation"><a href="#2、Motivation" class="headerlink" title="2、Motivation"></a>2、Motivation</h2><p>作者相信：如果预测所得的bounding box与ground-truth box有一个很高的IoU值，那么就可以认为用于预测同一类别的center keypoint在中心区域的概率是很高的，反之亦然。</p>
+<p>推理阶段：在得到一对corner keypoint后，通过检查是否有一种与其同一类别的center keypoint落在该proposal的中心区域，来判断proposal内是否真的有一个object。</p>
+<p><img src="1.png" alt=""></p>
+<p><strong>结论：</strong>CornerNet无法利用bounding box内部区域的信息。</p>
+<p>由此可得<strong>作者主要的motivation</strong>如下：</p>
+<ul>
+<li>作者将Object Detection任务转换为Keypoint Triplets估计任务。</li>
+<li>作者根据ConerNet的缺陷，又提出了Cascade corner pooling模块和Center pooling模块，用于充分利用bounding box边界和内部的信息。</li>
+</ul>
+<h2 id="3、Method"><a href="#3、Method" class="headerlink" title="3、Method"></a>3、Method</h2><h3 id="3-1-Object-Detection-as-Keypoint-Triplets"><a href="#3-1-Object-Detection-as-Keypoint-Triplets" class="headerlink" title="3.1 Object Detection as Keypoint Triplets"></a>3.1 Object Detection as Keypoint Triplets</h3><p><img src="2.png" alt="模型结构图"></p>
+<p><strong>Procedure:</strong></p>
+<p>1、首先根据它们的分数选择top-k个center keypoints。<br>2、使用对应的offsets来把这些center keypoint重新映射在输入图像上。<br>3、对每个bounding box定义一个中心区域，并且检查中心区域内是否含有center keypoints。经过检查的center keypoint的类别标签应该和它的bounding box的类别标签相同。<br>4、如果在中心区域检测到center keypoint，那么就保留bounding box。用top-left corner、bottom-right corner和center keypoint三个点的平均分数代替bounding box的分数。</p>
+<p><strong>自适应bounding box尺寸的中心区域的设计：</strong><br>$(tl_x, tl_y)$表示bounding box的左上角坐标。$(br_x,br_y)$表示bounding box的右下角坐标。$(ctl_x, ctl_y)$表示center region的左上角坐标。$(cbr_x,cbr_y)$表示center region的右下角坐标。<br>$$\left\{<br>\begin{array}<br>ctl_x=\frac{(n+1)tl_x + (n-1)br_x}{2n} \\<br>ctl_y=\frac{(n+1)tl_y + (n-1)br_y}{2n} \\<br>cbr_x=\frac{(n-1)tl_x + (n+1)br_x}{2n} \\<br>cbr_y=\frac{(n-1)tl_y + (n+1)br_y}{2n}<br>\end{array}<br>\right.<br>$$</p>
+<p><img src="3.png" alt="不同n对应的bounding box和center region图"></p>
+<p>$n$是一个奇数，取值为3或5，表示center region的尺寸。</p>
+<h3 id="3-2、Enriching-Center-and-Corner-Information"><a href="#3-2、Enriching-Center-and-Corner-Information" class="headerlink" title="3.2、Enriching Center and Corner Information"></a>3.2、Enriching Center and Corner Information</h3><p><strong>Center pooling</strong><br>存在的问题是object的几何中心点不一定传达最具有识别性的信息（例如：人体头部包含很多视觉信息，具有很强的识别性，但center keypoint经常落在人体躯干中心）。</p>
+<p>作者提出的方法：首先在backbone输出的特征图中判断出center keypoint的像素点，然后找到该像素点的水平和垂直方向的最大值并相加。</p>
+<p><strong>Cascade corner pooling</strong><br>存在的问题是corners经常在objects外，这缺失了局部外观特征。CornerNet中的corner pooling是在边界上找到最大值来确定Corners，但这种方法依赖于边界，仍无法充分利用object的视觉信息。</p>
+<p>作者提出的方法：<br>1、首先沿着边界找到边界上的最大值。<br>2、然后在这个边界最大值的位置上，向object内部搜索（上边界最大值的搜索方向：垂直向下、下边界最大值的搜索方向：垂直向上、左边界最大值的搜索方向：水平向右、右边界最大值的搜索方向：水平向左），找到内部的最大值。<br>3、最后将这两个最大值相加。<br>PS：四条边界四个点的最大值都如上所述方法可得，然后得到一对corners</p>
+<p><img src="4.png" alt="Corner pooling、Center pooling和Cascade corner pooling图"></p>
+<p>Center pooling和Cascade corner pooling的结构借鉴了Corner pooling结构而来，结构图如下：</p>
+<p><img src="5.png" alt="Center pooling和Cascade corner pooling的结构图"></p>
+<h3 id="3-3、Tasks"><a href="#3-3、Tasks" class="headerlink" title="3.3、Tasks"></a>3.3、Tasks</h3><p>Training Loss如下：<br>$$L=L_{det}^{co}+L_{det}^{ce}+\alpha L_{pull}^{co}+\beta L_{push}^{co}+\gamma (L_{off}^{co}+L_{off}^{ce})$$</p>
+<p>$L_{det}^{co}、L_{det}^{ce}$:为focal loss，用于训练网络检测corners和center keypoints。</p>
+<p>$L_{pull}^{co}$:”pull” loss，最小化属于相同objects的词向量的距离。</p>
+<p>$L_{push}^{co}$:”push” loss，最大化属于不同objects的词向量的距离。</p>
+<p>$L_{off}^{co}+L_{off}^{ce}$:用于训练网络预测corners和center keypoints的offsets。</p>
+<h2 id="4、Experiments"><a href="#4、Experiments" class="headerlink" title="4、Experiments"></a>4、Experiments</h2><p><strong>Baseline：</strong>CornerNet</p>
+<p><strong>Backbone：</strong>the stacked hourglass network with 52 and 104 layers</p>
+<h3 id="4-1、Comparison"><a href="#4-1、Comparison" class="headerlink" title="4.1、Comparison"></a>4.1、Comparison</h3><p>在MS-COCO test-dev数据集上，与State-of-the-art Detectors的对比结果:</p>
+<p><img src="6.png" alt="State-of-the-art Detectors的对比结果图"></p>
+<p>在MS-COCO validation数据集上，检测结果定性分析：</p>
+<p><img src="7.png" alt="检测结果定性分析图"></p>
+<p>CornerNet和CenterNet误检率对比的结果如下：</p>
+<p><img src="8.png" alt="误检率对比结果图"></p>
+<p>上图显示了CenterNet避免了大量错误bounding box的检测，尤其是小尺寸的错误bounding box。</p>
+<p>推理速度的对比：</p>
+<ul>
+<li><strong>average inference time of CornerNet511-104：</strong>300ms per image</li>
+<li><strong>average inference time of CenterNet511-104：</strong>340ms per image</li>
+<li><strong>average inference time of CenterNet511-52：</strong>270ms per image</li>
+</ul>
+<h3 id="4-2、Ablation-Study"><a href="#4-2、Ablation-Study" class="headerlink" title="4.2、Ablation Study"></a>4.2、Ablation Study</h3><p>Baseline:CornerNet511-52。CRE表示center region exploration。CTP表示center pooling。CCP表示cascade corner pooling。</p>
+<p><img src="9.png" alt="消融研究图"></p>
+<p>有无利用center信息的定性分析:</p>
+<p><img src="10.png" alt="关于center信息定性分析图"></p>
+<p>有无center pooling的定性分析:</p>
+<p><img src="11.png" alt="有无center pooling的定性分析图"></p>
+<p>在corner pooling和cascade corner pooling上的定性分析：</p>
+<p><img src="12.png" alt="关于corner/cascade corner pooling定性分析图"></p>
+<h3 id="4-2、Error-Analysis"><a href="#4-2、Error-Analysis" class="headerlink" title="4.2、Error Analysis"></a>4.2、Error Analysis</h3><p><img src="13.png" alt="Error Analysis图"></p>
+<h2 id="5、Main-contribution"><a href="#5、Main-contribution" class="headerlink" title="5、Main contribution"></a>5、Main contribution</h2><p>1、该论文提出了一种CenterNet模型，将目标检测任务转换成检测一个center keypoint和两个corners，三个点的任务。<br>2、该论文设计了center pooling和cascade corner pooling两个模块，来解决CornerNet无法利用bounding box内部信息的问题。</p>
 <p><img src="0.png" alt=""></p>
 <blockquote>
-<p><strong><em>“这一生志愿只要平凡快乐、谁说这样不伟大呢。”                         </em></strong></p><p align="right"><strong><em>——五月天《笑忘歌》</em></strong></p> <p></p>
+<p><strong><em>“你说被火烧过、才能出现凤凰</em></strong><br> <strong><em>逆风的方向、更适合飞翔</em></strong><br> <strong><em>我不怕千万人阻挡、只怕自己投降。”   </em></strong></p><p align="right"><strong><em>——五月天《倔强》</em></strong></p><p></p>
 </blockquote>
 
             </div>
@@ -832,9 +873,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《【论文解读】【CVPR2019】Query-guided End-to-End Person Search》
+                    《【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/01/14/cvpaper1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/02/cvpaper4/" property="cc:attributionName"
                rel="cc:attributionURL">
                 陈龙
             </a> 采用
@@ -875,7 +916,7 @@
         repo: 'CharlesChen24.github.io',
         owner: 'CharlesChen24',
         admin: "CharlesChcen24",
-        id: '2021/01/14/cvpaper1/',
+        id: '2021/03/02/cvpaper4/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1158,83 +1199,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/15/cvpaper2/">
+                <a href="/2021/03/02/cvpaper4/">
                     <div class="card-image">
                         
-                        <img src="/medias/papercover/2.png" class="responsive-img" alt="【论文解读】【arXiv2019】Objects as Points">
+                        <img src="/medias/papercover/" class="responsive-img" alt="【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search">
                         
-                        <span class="card-title">【论文解读】【arXiv2019】Objects as Points</span>
+                        <span class="card-title">【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要对一篇关于Object Detection任务的论文进行解读，该论文提出了一种CenterNet模型，将目标检测任务转换为关键点估计任务。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-15
-                        </span>
-                        <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/论文解读/" class="post-category" target="_blank">
-                                    论文解读
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CV/" target="_blank">
-                        <span class="chip bg-color">CV</span>
-                    </a>
-                    
-                    <a href="/tags/Object-Detection/" target="_blank">
-                        <span class="chip bg-color">Object Detection</span>
-                    </a>
-                    
-                    <a href="/tags/arXiv/" target="_blank">
-                        <span class="chip bg-color">arXiv</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/14/cvpaper1/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/papercover/1.png" class="responsive-img" alt="【论文解读】【CVPR2019】Query-guided End-to-End Person Search">
-                        
-                        <span class="card-title">【论文解读】【CVPR2019】Query-guided End-to-End Person Search</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本文主要对一篇于2019年发表在CVPR上，关于Peoson Search任务的论文进行解读，该论文提出了一个端到端的QEEPS模型。
+论文地址：https://arxiv.org/abs/1604.01850代码地址：https://github.com/ShuangLI59/person_search
+
+1、Background1.1、TaskObject Detec
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
                             </span>
                         <span class="publish-author">
                             
@@ -1262,6 +1251,62 @@
                     
                     <a href="/tags/Person-Search/" target="_blank">
                         <span class="chip bg-color">Person Search</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/17/cvpaper3/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/papercover/3.png" class="responsive-img" alt="【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection">
+                        
+                        <span class="card-title">【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文对一篇关于Object Detection任务的论文进行解读，该论文提出了一种CenterNet模型，将目标检测转换为Keypoint Triplets估计任务。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/论文解读/" class="post-category" target="_blank">
+                                    论文解读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CV/" target="_blank">
+                        <span class="chip bg-color">CV</span>
+                    </a>
+                    
+                    <a href="/tags/ICCV/" target="_blank">
+                        <span class="chip bg-color">ICCV</span>
+                    </a>
+                    
+                    <a href="/tags/Object-Detection/" target="_blank">
+                        <span class="chip bg-color">Object Detection</span>
                     </a>
                     
                 </div>

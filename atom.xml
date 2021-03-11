@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://CharlesChen24.github.io/"/>
-  <updated>2021-01-20T09:10:48.318Z</updated>
+  <updated>2021-03-02T09:05:49.283Z</updated>
   <id>https://CharlesChen24.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文解读】【CVPR2017】Joint Detection and Identification Feature Learning for Person Search</title>
+    <link href="https://CharlesChen24.github.io/2021/03/02/cvpaper4/"/>
+    <id>https://CharlesChen24.github.io/2021/03/02/cvpaper4/</id>
+    <published>2021-03-02T08:56:59.000Z</published>
+    <updated>2021-03-02T09:05:49.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;论文地址：&lt;/strong&gt;&lt;a href=&quot;https://arxiv.org/abs/1604.01850&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="论文解读" scheme="https://CharlesChen24.github.io/categories/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+      <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
+    
+      <category term="CVPR" scheme="https://CharlesChen24.github.io/tags/CVPR/"/>
+    
+      <category term="Person Search" scheme="https://CharlesChen24.github.io/tags/Person-Search/"/>
+    
+  </entry>
   
   <entry>
     <title>【论文解读】【ICCV2019】CenterNet: Keypoint Triplets for Object Detection</title>
@@ -41,9 +72,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
-    
       <category term="ICCV" scheme="https://CharlesChen24.github.io/tags/ICCV/"/>
+    
+      <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
     
   </entry>
   
@@ -72,9 +103,9 @@
     
       <category term="CV" scheme="https://CharlesChen24.github.io/tags/CV/"/>
     
-      <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
-    
       <category term="Object Detection" scheme="https://CharlesChen24.github.io/tags/Object-Detection/"/>
+    
+      <category term="arXiv" scheme="https://CharlesChen24.github.io/tags/arXiv/"/>
     
   </entry>
   
